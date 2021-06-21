@@ -4,6 +4,9 @@ package com.island.interview.singleton;
  * @author island
  * @version 1.0 2021/6/21 20:15
  */
+/*
+* 线程不安全 适用于单线程
+* */
 public class Singleton4 {
 
     private static Singleton4 instance;
