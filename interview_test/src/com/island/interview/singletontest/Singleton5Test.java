@@ -12,12 +12,15 @@ public class Singleton5Test {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
 
-        Callable<Singleton5> callable = new Callable<Singleton5>() {
-            @Override
-            public Singleton5 call() throws Exception {
-                return Singleton5.getInstance();
-            }
-        };
+//        Callable<Singleton5> callable = new Callable<Singleton5>() {
+//            @Override
+//            public Singleton5 call() throws Exception {
+//                return Singleton5.getInstance();
+//            }
+//        };
+
+        Callable<Singleton5> callable = Singleton5::getInstance;
+
 
         ExecutorService ex = Executors.newFixedThreadPool(2);
         Future<Singleton5> future1 = ex.submit(callable);
