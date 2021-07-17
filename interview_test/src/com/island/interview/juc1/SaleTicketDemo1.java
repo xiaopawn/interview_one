@@ -7,7 +7,15 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author island
  * @version 1.0 2021/7/13 12:30
  */
-public class MultiThread {
+
+/**
+ *题目：三个售票员   卖出   30张票
+ * 笔记：如何编写企业级的多线程
+ * 固定的编程套路+模板
+ * 1.在高内聚低耦合的前提下，线程    操作(对外暴露的调用方法)     资源类
+ *  1.1先创建一个资源类
+ */
+public class SaleTicketDemo1 {
 
     public static void main(String[] args) {
         Ticket ticket = new Ticket();
@@ -76,8 +84,6 @@ class Ticket {
         try {
             if (number > 0){
                 System.out.println(Thread.currentThread().getName() + "------卖出了：" + number-- + "，还剩：" + number);
-            }else {
-                lock.unlock();
             }
         } catch (Exception e) {
             e.printStackTrace();
