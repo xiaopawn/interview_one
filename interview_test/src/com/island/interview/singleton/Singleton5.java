@@ -15,7 +15,7 @@ public class Singleton5 {
 
     public static Singleton5 getInstance(){
 
-        // 这个if是为了优化 如果已经有了
+        // 这个if是为了优化 如果已经有了  双端检索DCL
         if (instance == null){
             synchronized (Singleton5.class){
                 if (instance == null){
